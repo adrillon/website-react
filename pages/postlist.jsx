@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Head from 'next/head';
-import { Link } from '../utils/routes';
 import SiteAPI from '../utils/SiteAPI';
 import LangAPI from '../utils/LangAPI';
-import { LanguageContext } from '../utils/LanguageContext';
 import Layout from '../layouts/Main.jsx';
+import PostListItem from '../components/PostListItem';
 
 class PostList extends Component {
     static async getInitialProps({query}) {
@@ -33,21 +32,13 @@ class PostList extends Component {
                     <title>{this.props.pageTitle}</title>
                 </Head>
                 <div>
-                    <ul>
-                        {this.props.posts.map((post) => (
-                            <li key={post.id} >
-                                <Link route="post" params={{lang: this.props.lang, posttype: this.props.posttype, slug: post.slug}} >
-                                    <a>{post.title}</a>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                    {this.props.posts.map((post) => (
+                        <PostListItem key={post.id} post={post} />
+                    ))}
                 </div>
             </Layout>
         )
     }
 }
-
-PostList.contextType = LanguageContext;
 
 export default PostList;
