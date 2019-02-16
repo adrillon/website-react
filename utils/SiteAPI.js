@@ -1,6 +1,7 @@
 import WPAPI from 'wpapi';
 import Config from '../config/config.json';
 import Langs from '../config/langs.json';
+import LangAPI from './LangAPI';
 
 class SiteAPI {
     constructor({lang}) {
@@ -9,7 +10,7 @@ class SiteAPI {
 
     setLang(lang = Config.lang) {
         this._lang = lang;
-        this._baseURL = Langs[lang];
+        this._baseURL = LangAPI.getInstance().getLangBaseURL(lang);
         this._baseEndpoint = this._baseURL + '/wp-json';
         this.wpapi = new WPAPI({
             endpoint: this._baseEndpoint,
@@ -21,14 +22,9 @@ class SiteAPI {
         return this._lang;
     }
 
-    _getPostTypeByLang(translatedPostType, lang) {
-        // match a translated post type name with its English name
-        let translatedPostTypes = require('../langs/' + lang + '.json').posttypes;
-        return Object.keys(translatedPostTypes).find((key) => translatedPostTypes[key] == translatedPostType);
-    }
 
     async getPostsByPostType(posttype, lang = this.getLang()) {
-        let postType = this._getPostTypeByLang(posttype, lang);
+        let postType = LangAPI.getInstance().getPostTypeByLang(posttype, lang);
         let posts = [];
         switch (postType) {
             default:
@@ -46,7 +42,7 @@ class SiteAPI {
     }
 
     async getPostByTypeAndSlug(posttype, slug, lang = this.getLang()) {
-        let postType = this._getPostTypeByLang(posttype, lang);
+        let postType = LangAPI.getInstance().getPostTypeByLang(posttype, lang);
         let post = {};
         switch (postType) {
             default:
@@ -76,6 +72,7 @@ class SiteAPI {
             slug: wpData.slug,
             content: wpData.content ? wpData.content.rendered : null,
             excerpt: wpData.excerpt ? wpData.excerpt.rendered : null,
+            translations: wpData.translations
         };
     }
 }
