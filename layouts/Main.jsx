@@ -5,6 +5,7 @@ import Config from '../config/config.json';
 import { LanguageContext } from '../utils/LanguageContext';
 import StickyNote from '../components/StickyNote';
 import StackOfPaper from '../components/StackOfPaper';
+import '../css/main.scss';
 
 class Layout extends Component {
     render() {
