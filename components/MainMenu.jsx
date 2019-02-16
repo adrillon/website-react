@@ -9,7 +9,7 @@ class MainMenu extends Component {
                 {value =>
                         <ul>
                             <li>
-                                <Link route="posts" params={{lang: value.lang, posttype: value.strings.posttypes.projects}} >
+                                <Link route="postlist" params={{lang: value.lang, posttype: value.strings.posttypes.projects}} >
                                     <a>{value.strings.strings.mainmenu.projects}</a>
                                 </Link>
                             </li>
