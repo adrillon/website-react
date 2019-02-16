@@ -39,6 +39,10 @@ class LangAPI {
     getLangBaseURL(lang) {
         return Langs[lang];
     }
+
+    getString(lang, category, string) {
+        return this.langs[lang].strings[category][string];
+    }
 }
 
 export default LangAPI;

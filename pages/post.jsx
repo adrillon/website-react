@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Head from 'next/head';
 import SiteAPI from '../utils/SiteAPI';
 import LangAPI from '../utils/LangAPI';
 import { LanguageContext } from '../utils/LanguageContext';
@@ -29,6 +30,9 @@ class Post extends Component {
 
         return (
             <Layout {...this.props} >
+                <Head>
+                    <title>{post.title}</title>
+                </Head>
                 <div>
                     <h1>{post.title}</h1>
                     <div dangerouslySetInnerHTML={{__html: post.content}} />

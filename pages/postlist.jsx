@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Head from 'next/head';
 import { Link } from '../utils/routes';
 import SiteAPI from '../utils/SiteAPI';
 import LangAPI from '../utils/LangAPI';
@@ -19,7 +20,8 @@ class PostList extends Component {
                     posttype: LangAPI.getInstance().getPostTypeFromOtherLanguage(query.posttype, query.lang, lang),
                     lang: lang,
                 }
-            }))
+            })),
+            pageTitle: LangAPI.getInstance().getString(query.lang, "titles", "projects")
         };
     }
 
@@ -27,6 +29,9 @@ class PostList extends Component {
     render() {
         return (
             <Layout {...this.props} >
+                <Head>
+                    <title>{this.props.pageTitle}</title>
+                </Head>
                 <div>
                     <ul>
                         {this.props.posts.map((post) => (

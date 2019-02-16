@@ -5,6 +5,9 @@
     "strings": {
         "mainmenu": {
             "projects": "Projets"
+        },
+        "titles": {
+            "projects": "Projets"
         }
     }
 }
