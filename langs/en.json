@@ -1,0 +1,10 @@
+{
+    "posttypes": {
+        "projects": "projects"
+    },
+    "strings": {
+        "mainmenu": {
+            "projects": "Projects"
+        }
+    }
+}

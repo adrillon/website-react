@@ -19,9 +19,14 @@ export default class MyApp extends App {
         let { Component, pageProps } = this.props;
 
         let lang = this.props.router.query.lang || Config.lang;
+        let langContext = {
+            lang: lang,
+            strings: require('../langs/' + lang + '.json')
+        };
+
         return (
             <Container>
-                <LanguageContext.Provider value={lang} >
+                <LanguageContext.Provider value={langContext} >
                     <Layout {...pageProps} >
                         <Component {...pageProps} />
                     </Layout>
