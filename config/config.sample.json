@@ -1,0 +1,7 @@
+{
+    "title": "Alain DRILLON",
+    "endpoints": {
+        "lang": "http://localhost/wp-json/custom/v1/langs"
+    },
+    "lang": "fr"
+}
