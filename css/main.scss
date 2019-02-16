@@ -1,4 +1,15 @@
+:root {
+    --text-color: #444.
+}
 body {
     background: sienna;
     font-family: sans-serif;
+    color: var(--text-color);
 }
+
+a, a:visited {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+

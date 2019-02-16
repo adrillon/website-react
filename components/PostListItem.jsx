@@ -2,23 +2,24 @@ import React, { Component } from "react";
 import { Link } from '../utils/routes';
 import { LanguageContext } from '../utils/LanguageContext';
 import LangAPI from '../utils/LangAPI';
+import '../css/posts.scss';
 
 class PostListItem extends Component {
     render() {
         let post = this.props.post;
         return (
-            <div className={"postlistitem postlistitem-" + post.type} >
-                <h2>
-                    <LanguageContext.Consumer>
-                        {value => 
-                            <Link route="post" params={{lang: value.lang, posttype: LangAPI.getInstance().getTranslatedPostType(post.type, value.lang), slug: post.slug}} >
+            <LanguageContext.Consumer>
+                {value => 
+                    <Link route="post" params={{lang: value.lang, posttype: LangAPI.getInstance().getTranslatedPostType(post.type, value.lang), slug: post.slug}} >
+                        <div className={"postlistitem postlistitem-" + post.type} >
+                            <h2>
                                 <a>{post.title}</a>
-                            </Link>
-                        }
-                    </LanguageContext.Consumer>
-                </h2>
-                <div className="postlistitem-excerpt" dangerouslySetInnerHTML={{__html: post.excerpt}} />
-            </div>
+                            </h2>
+                            <div className="postlistitem-excerpt" dangerouslySetInnerHTML={{__html: post.excerpt}} />
+                        </div>
+                    </Link>
+                }
+            </LanguageContext.Consumer>
         )
     }
 }
