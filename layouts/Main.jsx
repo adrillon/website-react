@@ -4,6 +4,7 @@ import LanguageSelector from '../components/LanguageSelector';
 import Config from '../config/config.json';
 import { LanguageContext } from '../utils/LanguageContext';
 import StickyNote from '../components/StickyNote';
+import StackOfPaper from '../components/StackOfPaper';
 
 class Layout extends Component {
     render() {
@@ -27,9 +28,11 @@ class Layout extends Component {
                     </LanguageContext.Provider>
                 </nav>
                 <main>
-                    <LanguageContext.Provider value={languageContext} >
-                        {this.props.children}
-                    </LanguageContext.Provider>
+                    <StackOfPaper>
+                        <LanguageContext.Provider value={languageContext} >
+                            {this.props.children}
+                        </LanguageContext.Provider>
+                    </StackOfPaper>
                 </main>
             </>
         )
