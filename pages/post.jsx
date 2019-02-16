@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Head from 'next/head';
 import SiteAPI from '../utils/SiteAPI';
 import LangAPI from '../utils/LangAPI';
-import { LanguageContext } from '../utils/LanguageContext';
-import Layout from '../layouts/Main.jsx';
+import Layout from '../layouts/Main';
+import PostView from '../components/PostView';
 
 class Post extends Component {
     static async getInitialProps({query, pathname}) {
@@ -33,15 +33,10 @@ class Post extends Component {
                 <Head>
                     <title>{post.title}</title>
                 </Head>
-                <div>
-                    <h1>{post.title}</h1>
-                    <div dangerouslySetInnerHTML={{__html: post.content}} />
-                </div>
+                <PostView post={post} />
             </Layout>
         )
     }
 }
-
-Post.contextType = LanguageContext;
 
 export default Post;
