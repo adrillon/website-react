@@ -1,0 +1,10 @@
+#contactlinks {
+    display: flex;
+    overflow: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .contactlink {
+        font-size: 4vmin;
+    }
+}
