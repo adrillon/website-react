@@ -12,7 +12,6 @@ class Layout extends Component {
         let lang = this.props.lang ? this.props.lang : Config.lang;
         let languageContext = {
             lang: lang,
-            strings: require('../langs/' + lang + '.json'),
             alternateLanguages: this.props.alternateLanguages,
         };
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from '../utils/routes';
 import { LanguageContext } from '../utils/LanguageContext';
+import LangAPI from'../utils/LangAPI';
 
 class MainMenu extends Component {
     render() {
@@ -9,8 +10,8 @@ class MainMenu extends Component {
                 {value =>
                         <ul>
                             <li>
-                                <Link route="postlist" params={{lang: value.lang, posttype: value.strings.posttypes.projects}} >
-                                    <a>{value.strings.strings.mainmenu.projects}</a>
+                                <Link route="postlist" params={{lang: value.lang, posttype: LangAPI.getInstance().getTranslatedPostType('projects', value.lang)}} >
+                                    <a>{LangAPI.getInstance().getString(value.lang, 'mainmenu', 'projects')}</a>
                                 </Link>
                             </li>
                         </ul>
