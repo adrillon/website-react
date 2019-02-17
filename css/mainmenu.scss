@@ -1,0 +1,15 @@
+#mainmenu {
+    a {
+        font-weight: lighter;
+        font-size: 1.5em;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        list-style-type: none;
+        font-size: 0.75em;
+        display: flex;
+        width: 45%;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

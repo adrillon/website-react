@@ -1,18 +1,44 @@
 .post-resumes {
     h1 {
-        font-size: 5vmin;
+        font-size: 4em;
         font-variant: small-caps;
     }
 
     h2 {
         text-align: center;
-        font-size: 4vmin;
+        font-size: 2.5em;
         font-variant: small-caps;
     }
 
     h3 {
-        clear: both;
-        font-size: 3vmin;
+        font-size: 1.75em;
+
+        &:not(.resume-title-small) {
+            clear: both;
+        }
+    }
+
+    h3 {
+        @media screen and (min-width: 769px) {
+            &#resume-title-education-certifications {
+                display: block;
+            }
+
+            &.resume-title-small {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            &#resume-title-education-certifications {
+                display: none;
+            }
+
+            &.resume-title-small {
+                display: block;
+            }
+        }
+
     }
 
     #resume-basic-info {
@@ -30,8 +56,10 @@
     }
 
     #resume-diplomas {
-        width: 75%;
-        float: left;
+        @media screen and (min-width: 769px) {
+            width: 75%;
+            float: left;
+        }
 
         .resume-diploma {
             margin-bottom: 2vmin;
@@ -64,13 +92,15 @@
     }
 
     #resume-skills {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
+        @media screen and (min-width: 651px) {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
 
-        .resume-skill {
-            width: 45%;
+            .resume-skill {
+                width: 45%;
+            }
         }
     }
 }

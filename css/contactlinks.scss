@@ -1,10 +1,14 @@
 #contactlinks {
     display: flex;
-    overflow: none;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 10%;
-    margin-top: 25%;
+    width: 100%;
+    align-items: center;
+
+    @media screen and (min-width: 1025px) {
+        margin: 10%;
+        margin-top: 25%;
+    }
 
     .contactlink {
         font-size: 4vmin;

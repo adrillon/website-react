@@ -16,6 +16,8 @@
         },
         "resumes": {
             "education_and_certifications": "Formation et certifications",
+            "education": "Formation",
+            "certifications": "Certifications",
             "skills": "Compétences"
         }
     }

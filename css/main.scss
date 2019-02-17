@@ -6,6 +6,10 @@ body {
     background: sienna;
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     color: var(--text-color);
+
+    @media screen and (max-width: 1024px) {
+        margin: 0;
+    }
 }
 
 a, a:visited {

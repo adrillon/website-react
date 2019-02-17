@@ -4,38 +4,80 @@
     --stickynote-background-dark: #ffff77;
 }
 
-.stickynote {
-    &#stickynote-left {
-        top: 5vw;
-        left: 5vw;
-        border-bottom-right-radius: 12vmin 1vmin;
-        border-bottom-left-radius: 3vmin 2vmin;
+#stickynote-container {
 
+    .stickynote {
+        background-color: var(--stickynote-background);
+
+        &#stickynote-left {
+            @media screen and (min-width: 1025px) {
+                top: 5vw;
+                left: 5vw;
+                border-bottom-right-radius: 12vmin 1vmin;
+                border-bottom-left-radius: 3vmin 2vmin;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 75%;
+            }
+        }
+
+        &#stickynote-right {
+            @media screen and (min-width: 1025px) {
+                top: 10vw;
+                right: 5vw;
+                border-bottom-right-radius: 12vmin 3vmin;
+                border-bottom-left-radius: 7vmin 1vmin;
+            }
+
+            @media screen and (min-width: 1025px) and (max-width: 1687px) {
+                top: calc(var(--stickynote-size) + 7vw);
+                left: 5vw;
+            }
+
+            @media screen and (max-width: 1024px) {
+                width: 25%;
+                display: flex;
+                justify-content: flex-end;
+
+                .stickynote-content {
+                    width: 50%;
+                }
+            }
+        }
+
+        .stickynote-content {
+            height: 100%;
+
+            @media screen and (min-width: 1025px) {
+                padding: calc(var(--stickynote-size) / 20);
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            position: fixed;
+            width: var(--stickynote-size);
+            height: var(--stickynote-size);
+            background: linear-gradient(var(--stickynote-background-dark), var(--stickynote-background));
+            box-shadow: 0.1875vmin 0.1875vmin 0.1875vmin black;
+        }
+
+        @media screen and (max-width: 1024px) {
+            transform: initial !important;
+            box-shadow: none;
+            top: 0;
+        }
     }
 
-    &#stickynote-right {
-        top: 10vw;
-        right: 5vw;
-        border-bottom-right-radius: 12vmin 3vmin;
-        border-bottom-left-radius: 7vmin 1vmin;
+    @media screen and (max-width: 1024px) {
+        display: flex;
+        height: 4em;
     }
 
-    .stickynote-content {
-        padding: calc(var(--stickynote-size) / 20);
-    }
-
-    @media screen and (min-width: 801px) {
-        position: fixed;
-        width: var(--stickynote-size);
-        height: var(--stickynote-size);
-        background-color: var(-stickynote-background);
-        background: linear-gradient(var(--stickynote-background-dark), var(--stickynote-background));
-        box-shadow: 0.1875vmin 0.1875vmin 0.1875vmin black;
-    }
-
-    @media screen and (max-width: 800px) {
-        transform: initial !important;
-        display: inline-block;
-    }
 }
-

@@ -3,13 +3,14 @@ import { Link } from '../utils/routes';
 import { LanguageContext } from '../utils/LanguageContext';
 import LangAPI from'../utils/LangAPI';
 import Config from '../config/config.json';
+import '../css/mainmenu.scss';
 
 class MainMenu extends Component {
     render() {
         return (
             <LanguageContext.Consumer>
                 {value =>
-                        <ul>
+                        <ul id="mainmenu" >
                             <li>
                                 <Link route="defaultpost" params={{lang: value.lang, posttype: LangAPI.getInstance().getTranslatedPostType('resumes', value.lang) }} >
                                     <a>{LangAPI.getInstance().getString(value.lang, 'mainmenu', 'resume')}</a>

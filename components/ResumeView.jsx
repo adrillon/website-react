@@ -26,7 +26,8 @@ class ResumeView extends Component {
                                 <li><i className="fa fa-map" />{post.resume.resume_info.location}</li>
                             </ul>
 
-                            <h3>{LangAPI.getInstance().getString(value.lang, 'resumes', 'education_and_certifications')}</h3>
+                            <h3 id="resume-title-education-certifications">{LangAPI.getInstance().getString(value.lang, 'resumes', 'education_and_certifications')}</h3>
+                            <h3 className="resume-title-small" >{LangAPI.getInstance().getString(value.lang, 'resumes', 'education')}</h3>
                             <div id="resume-diplomas" >
                                 {post.resume.diplomas.map((diploma, id) => (
                                     <div key={id} className="resume-diploma" >
@@ -39,6 +40,7 @@ class ResumeView extends Component {
                                 ))}
                             </div>
 
+                            <h3 className="resume-title-small" >{LangAPI.getInstance().getString(value.lang, 'resumes', 'certifications')}</h3>
                             <div id="resume-certifications" >
                                 {post.resume.certifications.map((certification, id) => (
                                     <div key={id} className="resume-certification" >
