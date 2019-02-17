@@ -7,6 +7,7 @@ class StickyNote extends Component {
         let style = {
             transform: "rotate(" + rotation + "deg)"
         };
+
         return (
             <div className="stickynote" id={this.props.id} style={style} >
                 {this.props.children ? <div className="stickynote-content" >{this.props.children}</div> : ''}

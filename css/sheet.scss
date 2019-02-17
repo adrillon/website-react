@@ -1,7 +1,6 @@
 :root {
     --sheet-width: 50vw;
     --sheet-height: calc(var(--sheet-width) / 0.7);
-
 }
 
 #stackofpaper {
@@ -11,16 +10,33 @@
 
 .sheet {
     background-color: #fafafa;
-    width: var(--sheet-width);
-    height: var(--sheet-height);
-    border: 1px solid black;
     position: absolute;
-    left: calc(50vw - (var(--sheet-width)/2));
-    top: 2.5vh;
-    box-shadow: 0.1875vmin 0.1875vmin 0.1875vmin black;
-}
 
-.sheet-content {
-    margin: calc(var(--sheet-width) / 10);
+    .sheet-content {
+        margin: calc(var(--sheet-width) / 10);
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: var(--sheet-width);
+        height: var(--sheet-height);
+        border: 1px solid black;
+        left: calc(50vw - (var(--sheet-width)/2));
+        top: 2.5vh;
+        box-shadow: 0.1875vmin 0.1875vmin 0.1875vmin black;
+    }
+
+    @media screen and (max-width: 1024px) {
+        width: 73vw;
+
+        &:not(:last-child) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+    }
 }
 
