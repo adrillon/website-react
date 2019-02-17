@@ -26,9 +26,9 @@ class Layout extends Component {
                     <LanguageContext.Provider value={languageContext} >
                         <StickyNote id="stickynote-left" >
                             <MainMenu />
+                            <LanguageSelector />
                         </StickyNote>
                         <StickyNote id="stickynote-right" >
-                            <LanguageSelector />
                             <ContactLinksList />
                         </StickyNote>
                     </LanguageContext.Provider>
