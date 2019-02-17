@@ -96,6 +96,8 @@ class SiteAPI {
         switch (sanitized.type) {
             case 'projects':
                 return this._sanitizeWpProject(wpData, sanitized);
+            case 'resumes':
+                return this._sanitizeWpResume(wpData, sanitized);
             default:
                 return sanitized;
         }
@@ -105,6 +107,26 @@ class SiteAPI {
         return {
             ...sanitized,
             homepage: wpData.cmb2.project.project_links[0].homepage
+        }
+    }
+
+    _sanitizeWpResume(wpData, sanitized) {
+        let resume = wpData.cmb2.resume;
+        resume.resume_info = resume.resume_info[0];
+        resume.diplomas = resume.diplomas.sort((a,b) => {
+            if (a.end_year < b.end_year) return 1;
+            if (a.end_year > b.end_year) return -1;
+            return 0;
+        });
+        resume.certifications = resume.certifications.sort((a,b) => {
+            if (a.year < b.year) return 1;
+            if (a.year > b.year) return -1;
+            return 0;
+        });
+
+        return {
+            ...sanitized,
+            resume
         }
     }
 }

@@ -13,6 +13,10 @@
         },
         "projects": {
             "homepage": "Site Web du projet :"
+        },
+        "resumes": {
+            "education_and_certifications": "Formation et certifications",
+            "skills": "Compétences"
         }
     }
 }

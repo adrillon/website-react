@@ -1,0 +1,76 @@
+.post-resumes {
+    h1 {
+        font-size: 5vmin;
+        font-variant: small-caps;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 4vmin;
+        font-variant: small-caps;
+    }
+
+    h3 {
+        clear: both;
+        font-size: 3vmin;
+    }
+
+    #resume-basic-info {
+        position: absolute;
+        right: var(--sheet-margin);
+        top: var(--sheet-margin);
+        margin: 0;
+
+        list-style-type: none;
+
+        i {
+            width: 3vmin;
+            text-align: center;
+        }
+    }
+
+    #resume-diplomas {
+        width: 75%;
+        float: left;
+
+        .resume-diploma {
+            margin-bottom: 2vmin;
+
+            .resume-diploma-year {
+                font-weight: bold;
+            }
+
+            .resume-diploma-location {
+                font-size: 75%;
+            }
+        }
+
+    }
+
+    #resume-certifications {
+        .resume-certification {
+            overflow: spread;
+
+            .resume-certification-year {
+                margin-top: 2vmin;
+                font-weight: bold;
+            }
+
+            .document-link {
+                float: left;
+                margin-right: 1vmin;
+            }
+        }
+    }
+
+    #resume-skills {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .resume-skill {
+            width: 45%;
+        }
+    }
+}
