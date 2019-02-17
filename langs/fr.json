@@ -8,6 +8,9 @@
         },
         "titles": {
             "projects": "Projets"
+        },
+        "projects": {
+            "homepage": "Site Web du projet :"
         }
     }
 }

@@ -8,7 +8,9 @@
         },
         "titles": {
             "projects": "Projects"
+        },
+        "projects": {
+            "homepage": "Project homepage:"
         }
-
     }
 }

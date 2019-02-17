@@ -80,7 +80,7 @@ class SiteAPI {
     }
 
     _sanitizeWpPostData(wpData) {
-        return {
+        let sanitized = {
             id: wpData.id,
             title: wpData.title.rendered,
             type: wpData.type,
@@ -89,6 +89,20 @@ class SiteAPI {
             excerpt: wpData.excerpt ? wpData.excerpt.rendered : null,
             translations: wpData.translations
         };
+
+        switch (sanitized.type) {
+            case 'projects':
+                return this._sanitizeWpProject(wpData, sanitized);
+            default:
+                return sanitized;
+        }
+    }
+
+    _sanitizeWpProject(wpData, sanitized) {
+        return {
+            ...sanitized,
+            homepage: wpData.cmb2.project.project_links[0].homepage
+        }
     }
 }
 
