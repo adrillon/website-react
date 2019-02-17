@@ -4,8 +4,17 @@ import Langs from '../config/langs.json';
 import LangAPI from './LangAPI';
 
 class SiteAPI {
+    static getInstance(lang = Config.lang) {
+        if (SiteAPI.instance && SiteAPI.instance.getLang() != lang) {
+            SiteAPI.instance.setLang(lang);
+        } else if (! SiteAPI.instance) {
+            SiteAPI.instance = new SiteAPI({lang: lang});
+        }
+        return SiteAPI.instance;
+    }
+
     constructor({lang}) {
-        this.setLang(lang);
+        this.setLang(lang ? lang : undefined);
     }
 
     setLang(lang = Config.lang) {
@@ -22,6 +31,12 @@ class SiteAPI {
         return this._lang;
     }
 
+    async getOptions() {
+        if (! this.siteOptions) {
+            this.siteOptions = await this.wpapi.options().get();
+        }
+        return this.siteOptions;
+    }
 
     async getPostsByPostType(posttype, lang = this.getLang()) {
         let postType = LangAPI.getInstance().getPostTypeByLang(posttype, lang);

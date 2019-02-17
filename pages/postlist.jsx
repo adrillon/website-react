@@ -7,12 +7,10 @@ import PostListItem from '../components/PostListItem';
 
 class PostList extends Component {
     static async getInitialProps({query}) {
-        let siteapi = new SiteAPI({lang: query.lang});
-
         return {
             lang: query.lang,
             posttype: query.posttype,
-            posts: await siteapi.getPostsByPostType(query.posttype),
+            posts: await SiteAPI.getInstance(query.lang).getPostsByPostType(query.posttype),
             alternateLanguages: LangAPI.getInstance().getAllLanguages().map((lang) => ({
                 route: 'postlist',
                 params: {

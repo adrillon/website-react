@@ -7,8 +7,7 @@ import PostView from '../components/PostView';
 
 class Post extends Component {
     static async getInitialProps({query, pathname}) {
-        let siteapi = new SiteAPI({lang: query.lang});
-        let post = await siteapi.getPostByTypeAndSlug(query.posttype, query.slug);
+        let post = await SiteAPI.getInstance(query.lang).getPostByTypeAndSlug(query.posttype, query.slug);
 
         return {
             lang: query.lang,
