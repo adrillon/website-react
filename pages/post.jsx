@@ -4,23 +4,33 @@ import SiteAPI from '../utils/SiteAPI';
 import LangAPI from '../utils/LangAPI';
 import Layout from '../layouts/Main';
 import PostView from '../components/PostView';
+import Config from '../config/config.json';
 
 class Post extends Component {
     static async getInitialProps({query, pathname}) {
-        let post = await SiteAPI.getInstance(query.lang).getPostByTypeAndSlug(query.posttype, query.slug);
+        let usesDefaultPost = query.slug === undefined;
+        let slug = query.slug ? query.slug : Config.defaultPosts[LangAPI.getInstance().getPostTypeByLang(query.posttype, query.lang)][query.lang];
+        let post = await SiteAPI.getInstance(query.lang).getPostByTypeAndSlug(query.posttype, slug);
 
         return {
             lang: query.lang,
             currentRoute: pathname,
             post: post,
-            alternateLanguages: Object.keys(post.translations).map((lang) => ({
-                route: 'post',
-                params: {
+            alternateLanguages: Object.keys(post.translations).map((lang) => {
+                let params = {
                     posttype: LangAPI.getInstance().getTranslatedPostType(post.type, lang),
                     lang: lang,
-                    slug: post.translations[lang].slug
+                };
+
+                if (! usesDefaultPost) {
+                    params.slug = post.translations[lang].slug;
                 }
-            }))
+
+                return {
+                    route: usesDefaultPost ? 'defaultpost' : 'post',
+                    params
+                };
+            }),
         };
     }
 

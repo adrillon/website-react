@@ -1,10 +1,12 @@
 {
     "posttypes": {
-        "projects": "projets"
+        "projects": "projets",
+        "resumes": "cv"
     },
     "strings": {
         "mainmenu": {
-            "projects": "Projets"
+            "projects": "Projets",
+            "resume": "CV"
         },
         "titles": {
             "projects": "Projets"
