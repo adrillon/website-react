@@ -1,3 +1,5 @@
+@import 'main.scss';
+
 #mainmenu {
     float: left;
     width: 16vw;
@@ -21,7 +23,7 @@
     #infocard {
         h1 {
             text-align: left;
-            font-size: 6vmin;
+            font-size: 200%;
             font-variant: small-caps;
         }
     }
@@ -54,6 +56,54 @@
 
         li {
             margin: 0 2vmin;
+        }
+    }
+
+    @media screen and (max-width: $break-supersmall) {
+        float: none;
+        width: 96vw;
+        height: 10vh;
+        position: fixed;
+        z-index: 10;
+        display: flex;
+
+        #infocard {
+            width: 21vw;
+
+            h1 {
+                font-size: 5vmin;
+            }
+        }
+        
+        #navmenu {
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+
+            li {
+                a {
+                    height: 100%;
+                    display: inline-flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        #contactlinks, #languageselector {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: auto;
+            font-size: 6vmin;
+
+            img {
+                height: 6vmin;
+            }
+        }
+
+        #languageselector {
+            margin-left: 2vmin;
         }
     }
 }

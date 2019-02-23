@@ -1,3 +1,5 @@
+@import 'main.scss';
+
 .post-resumes {
     h1, h2, h3 {
         font-variant: small-caps;
@@ -8,15 +10,15 @@
     }
 
     h1 {
-        font-size: 9vmin;
-    }
-
-    h2 {
         font-size: 7vmin;
     }
 
-    h3 {
+    h2 {
         font-size: 5vmin;
+    }
+
+    h3 {
+        font-size: 4vmin;
         clear: both;
         color: #6A6A61;
         margin: 3vmin 0 3vmin 0;
@@ -110,4 +112,85 @@
         }
     }
 
+    @media screen and (max-width: $break-supersmall) {
+        h1 {
+            display: none;
+        }
+
+        h2 {
+            font-size: 8vmin;
+        }
+
+        h3 {
+            margin-top: 5vmin;
+            font-size: 6vmin;
+        }
+
+        .resume-block {
+            margin-top: 8vmin;
+
+            .resume-subblock {
+                margin-top: 3vmin;
+            }
+        }
+
+        #resume-basic-info {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+
+            i {
+                margin-right: 2vmin;
+            }
+        }
+
+        #resume-title-education-certifications {
+            display: none;
+        }
+
+        #resume-diplomas,
+        #resume-certifications {
+            float: none;
+            width: 100%;
+        }
+
+        #resume-diplomas,
+        #resume-certifications {
+            h4 {
+                display: initial;
+                margin-top: 5vmin;
+                color: #6A6A61;
+                font-variant: small-caps;
+                font-size: 6vmin;
+            }
+        }
+
+        #resume-certifications {
+            .resume-certification {
+                margin-top: 0;
+            }
+        }
+
+        #resume-career {
+            .resume-job {
+                .resume-job-company {
+                    display: block;
+                    margin-left: 0;
+                    font-size: 80%;
+                }
+            }
+        }
+
+        #resume-skills {
+            display: initial;
+
+            .resume-skill {
+                width: 100%;
+
+                &:last-child:nth-child(odd) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
 }

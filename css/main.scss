@@ -1,3 +1,5 @@
+$break-supersmall: 850px;
+
 :root {
     --background: #1D2326;
     --light-font-color: #EEEEEE;
@@ -26,11 +28,25 @@
         #content-container {
             padding: 1vw;
             margin-left: 20vw;
+
+            #main-content {
+                padding: 1vw;
+                background: white;
+            }
         }
 
-        #main-content {
-            padding: 1vw;
-            background: white;
+        @media screen and (max-width: $break-supersmall) {
+            #content-container {
+                margin: 0;
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 0;
+
+                #main-content {
+                    padding: 4vw;
+                    margin: 10vh 0 0 0;
+                }
+            }
         }
     }
 }

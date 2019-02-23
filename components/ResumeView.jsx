@@ -27,9 +27,9 @@ class ResumeView extends Component {
                             </ul>
 
                             <h3 id="resume-title-career">{LangAPI.getInstance().getString(value.lang, 'resumes', 'career')}</h3>
-                            <div id="resume-career" >
+                            <div className="resume-block" id="resume-career" >
                                 {post.resume.jobs.map((job, id) => (
-                                    <div key={id} className="resume-job" >
+                                    <div key={id} className="resume-subblock resume-job" >
                                         <div className="resume-item-date resume-job-dates" >
                                             {job.date_range}
                                         </div>
@@ -47,10 +47,10 @@ class ResumeView extends Component {
                             </div>
 
                             <h3 id="resume-title-education-certifications">{LangAPI.getInstance().getString(value.lang, 'resumes', 'education_and_certifications')}</h3>
-                            <div id="resume-diplomas" >
+                            <div className="resume-block" id="resume-diplomas" >
                                 <h4>{LangAPI.getInstance().getString(value.lang, 'resumes', 'education')}</h4>
                                 {post.resume.diplomas.map((diploma, id) => (
-                                    <div key={id} className="resume-diploma" >
+                                    <div key={id} className="resume-subblock resume-diploma" >
                                         <div className="resume-item-date resume-diploma-year" >
                                             {diploma.start_year == diploma.end_year ? diploma.start_year : diploma.start_year + ' - ' + diploma.end_year}
                                         </div>
@@ -60,10 +60,10 @@ class ResumeView extends Component {
                                 ))}
                             </div>
 
-                            <div id="resume-certifications" >
+                            <div className="resume-block" id="resume-certifications" >
                                 <h4>{LangAPI.getInstance().getString(value.lang, 'resumes', 'certifications')}</h4>
                                 {post.resume.certifications.map((certification, id) => (
-                                    <div key={id} className="resume-certification" >
+                                    <div key={id} className="resume-subblock resume-certification" >
                                         {id == 0 || certification.year != post.resume.certifications[id-1].year || certification.end_year != post.resume.certifications[id-1].end_year
                                             ? <div className="resume-item-date resume-certification-year" >
                                                 {certification.end_year ? certification.year + ' - ' + certification.end_year : certification.year}
@@ -77,9 +77,9 @@ class ResumeView extends Component {
                             </div>
 
                             <h3>{LangAPI.getInstance().getString(value.lang, 'resumes', 'skills')}</h3>
-                            <div id="resume-skills" >
+                            <div className="resume-block" id="resume-skills" >
                                 {post.resume.skills.map((skill, id) => (
-                                    <div key={id} className="resume-skill" >
+                                    <div key={id} className="resume-subblock resume-skill" >
                                         <h4>{skill.title}</h4>
                                         <p dangerouslySetInnerHTML={{__html: skill.description.replace(/\r\n/g, '<br />')}} />
                                     </div>
