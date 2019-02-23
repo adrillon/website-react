@@ -21,7 +21,7 @@ class ResumeView extends Component {
                             <h2>{post.title}</h2>
 
                             <ul id="resume-basic-info" >
-                                <li><i className="fa fa-male" />{age}</li>
+                                <li><i className="fa fa-male" />{age} {LangAPI.getInstance().getString(value.lang, 'resumes', 'yearsold')}</li>
                                 <li><i className="fa fa-car" />{post.resume.resume_info.drivers_license}</li>
                                 <li><i className="fa fa-map" />{post.resume.resume_info.location}</li>
                                 <li className="resumeinfo-printonly" ><i className="fa fa-globe" />

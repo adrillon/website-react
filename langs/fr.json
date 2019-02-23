@@ -19,7 +19,8 @@
             "education": "Formation",
             "certifications": "Certifications",
             "skills": "Compétences",
-            "career": "Expérience professionnelle"
+            "career": "Expérience professionnelle",
+            "yearsold": "ans"
         }
     }
 }

@@ -19,7 +19,8 @@
             "education": "Education",
             "certifications": "Certifications",
             "skills": "Skills",
-            "career": "Career"
+            "career": "Career",
+            "yearsold": "years old"
         }
 
     }
