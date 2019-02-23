@@ -113,17 +113,18 @@ class SiteAPI {
     _sanitizeWpResume(wpData, sanitized) {
         let resume = wpData.cmb2.resume;
         resume.resume_info = resume.resume_info[0];
-        resume.diplomas = resume.diplomas.sort((a,b) => {
+        resume.diplomas = resume.diplomas ? resume.diplomas.sort((a,b) => {
             if (a.end_year < b.end_year) return 1;
             if (a.end_year > b.end_year) return -1;
             return 0;
-        });
-        resume.certifications = resume.certifications.sort((a,b) => {
+        }) : [];
+        resume.certifications = resume.certifications ? resume.certifications.sort((a,b) => {
             if (a.year < b.year) return 1;
             if (a.year > b.year) return -1;
             return 0;
-        });
-        resume.jobs = resume.jobs.reverse();
+        }) : [];
+        resume.jobs = resume.jobs ? resume.jobs.reverse() : [];
+        resume.skills = resume.skills || [];
 
         return {
             ...sanitized,
