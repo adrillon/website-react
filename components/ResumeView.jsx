@@ -24,6 +24,16 @@ class ResumeView extends Component {
                                 <li><i className="fa fa-male" />{age}</li>
                                 <li><i className="fa fa-car" />{post.resume.resume_info.drivers_license}</li>
                                 <li><i className="fa fa-map" />{post.resume.resume_info.location}</li>
+                                <li className="resumeinfo-printonly" ><i className="fa fa-globe" />
+                                    <a href={post.resume.resume_info.website} >
+                                        {post.resume.resume_info.website.replace(/https?:\/\//, '')}
+                                    </a>
+                                </li>
+                                <li className="resumeinfo-printonly" ><i className="fab fa-github" />
+                                    <a href={"https://github.com/" + post.resume.resume_info.github} >
+                                        {post.resume.resume_info.github}
+                                    </a>
+                                </li>
                             </ul>
 
                             <h3 id="resume-title-career">{LangAPI.getInstance().getString(value.lang, 'resumes', 'career')}</h3>
