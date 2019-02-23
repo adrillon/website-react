@@ -193,4 +193,64 @@
             }
         }
     }
+
+    @media print {
+        h1 {
+            text-align: left;
+            font-size: 4.5vmin;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 4vmin;
+        }
+
+        h3 {
+            font-size: 3vmin;
+        }
+
+        a {
+            font-weight: normal;
+        }
+
+        .document-link {
+            display: none;
+        }
+
+        .resume-item-title {
+            font-size: 100%;
+        }
+
+        #resume-basic-info {
+            right: 0;
+        }
+
+        #resume-career {
+            .resume-job {
+                margin: 0;
+            }
+        }
+
+        #resume-diplomas {
+            width: 75%;
+
+            .resume-diploma {
+                margin: 0;
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+
+        #resume-certifications {
+            width: 25%;
+        }
+
+        #resume-skills {
+            .resume-skill {
+                margin: 0;
+            }
+        }
+    }
 }

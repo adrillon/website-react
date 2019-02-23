@@ -48,6 +48,18 @@ $break-supersmall: 850px;
                 }
             }
         }
+
+        @media print {
+            font-size: 90%;
+            #content-container {
+                margin: 0;
+                padding: 0;
+
+                #main-content {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
     }
 }
-
