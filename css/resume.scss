@@ -1,106 +1,113 @@
 .post-resumes {
-    h1 {
-        font-size: 4em;
+    h1, h2, h3 {
         font-variant: small-caps;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 9vmin;
     }
 
     h2 {
-        text-align: center;
-        font-size: 2.5em;
-        font-variant: small-caps;
+        font-size: 7vmin;
     }
 
     h3 {
-        font-size: 1.75em;
-
-        &:not(.resume-title-small) {
-            clear: both;
-        }
+        font-size: 5vmin;
+        clear: both;
+        color: #6A6A61;
+        margin: 3vmin 0 3vmin 0;
     }
 
-    h3 {
-        @media screen and (min-width: 769px) {
-            &#resume-title-education-certifications {
-                display: block;
-            }
+    .resume-item-title {
+        font-size: 110%;
+    }
 
-            &.resume-title-small {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            &#resume-title-education-certifications {
-                display: none;
-            }
-
-            &.resume-title-small {
-                display: block;
-            }
-        }
-
+    .resume-item-date {
+        font-size: 90%;
+        font-weight: bold;
     }
 
     #resume-basic-info {
-        position: absolute;
-        right: var(--sheet-margin);
-        top: var(--sheet-margin);
-        margin: 0;
-
         list-style-type: none;
+        position: absolute;
+        right: 4vw;
+        top: 2vw;
 
         i {
-            width: 3vmin;
+            width: 4vmin;
             text-align: center;
         }
     }
 
+    #resume-career {
+        .resume-job {
+            margin-bottom: 2vmin;
+
+            .resume-job-company {
+                margin-left: 1vmin;
+                font-size: 85%;
+            }
+
+            .resume-job-description {
+                font-size: 85%;
+            }
+        }
+    }
+
     #resume-diplomas {
-        @media screen and (min-width: 769px) {
-            width: 75%;
-            float: left;
+        float: left;
+        width: 50%;
+
+        h4 {
+            display: none;
         }
 
         .resume-diploma {
             margin-bottom: 2vmin;
 
-            .resume-diploma-year {
-                font-weight: bold;
-            }
-
             .resume-diploma-location {
-                font-size: 75%;
+                font-size: 85%;
             }
         }
-
     }
 
     #resume-certifications {
-        .resume-certification {
-            overflow: spread;
+        float: right;
+        width: 50%;
 
-            .resume-certification-year {
-                margin-top: 2vmin;
-                font-weight: bold;
-            }
+        h4 {
+            display: none;
+        }
+
+        .resume-certification {
+            margin-bottom: 2vmin;
 
             .document-link {
-                float: left;
-                margin-right: 1vmin;
+                width: 3vmin;
+            }
+
+            .resume-certification-title {
+                display: inline;
             }
         }
     }
 
     #resume-skills {
-        @media screen and (min-width: 651px) {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
 
-            .resume-skill {
-                width: 45%;
+        .resume-skill {
+            width: 50%;
+            margin-bottom: 5vmin;
+
+            &:last-child:nth-child(odd) {
+                margin-left: 50%;
             }
         }
     }
+
 }

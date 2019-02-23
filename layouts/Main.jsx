@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import Head from 'next/head';
 import MainMenu from '../components/MainMenu';
-import LanguageSelector from '../components/LanguageSelector';
 import Config from '../config/config.json';
 import { LanguageContext } from '../utils/LanguageContext';
-import StickyNote from '../components/StickyNote';
-import StackOfPaper from '../components/StackOfPaper';
-import ContactLinksList from '../components/ContactLinksList';
 import '../css/main.scss';
 
 class Layout extends Component {
@@ -22,24 +18,14 @@ class Layout extends Component {
                 <Head>
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
                 </Head>
-                <nav id="stickynote-container" >
-                    <LanguageContext.Provider value={languageContext} >
-                        <StickyNote id="stickynote-left" >
-                            <MainMenu />
-                            <LanguageSelector />
-                        </StickyNote>
-                        <StickyNote id="stickynote-right" >
-                            <ContactLinksList />
-                        </StickyNote>
-                    </LanguageContext.Provider>
-                </nav>
-                <main>
-                    <StackOfPaper>
-                        <LanguageContext.Provider value={languageContext} >
+                <LanguageContext.Provider value={languageContext} >
+                    <MainMenu />
+                    <div id="content-container" >
+                        <main id="main-content" >
                             {this.props.children}
-                        </LanguageContext.Provider>
-                    </StackOfPaper>
-                </main>
+                        </main>
+                    </div>
+                </LanguageContext.Provider>
             </>
         )
     }

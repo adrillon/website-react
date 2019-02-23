@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from '../utils/routes';
 import { LanguageContext } from '../utils/LanguageContext';
 import LangAPI from '../utils/LangAPI';
-import '../css/posts.scss';
+import '../css/postlist.scss';
 
 class PostListItem extends Component {
     render() {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from '../utils/routes';
 import { LanguageContext } from '../utils/LanguageContext';
-import '../css/languageselector.scss';
 
 class LanguageSelector extends Component {
     render() {

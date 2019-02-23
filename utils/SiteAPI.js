@@ -123,6 +123,7 @@ class SiteAPI {
             if (a.year > b.year) return -1;
             return 0;
         });
+        resume.jobs = resume.jobs.reverse();
 
         return {
             ...sanitized,

@@ -1,15 +1,59 @@
 #mainmenu {
-    a {
-        font-weight: lighter;
-        font-size: 1.5em;
+    float: left;
+    width: 16vw;
+    overflow: hidden;
+    background: #2C3E50;
+    color: var(--light-font-color);
+    padding: 2vw;
+    height: calc(100vh - 4vw);
+    position: fixed;
+
+    a, a:visited {
+        color: var(--light-font-color);
+        font-weight: normal;
     }
-    
-    @media screen and (max-width: 1024px) {
+
+    ul {
         list-style-type: none;
-        font-size: 0.75em;
+        padding: 0;
+    }
+
+    #infocard {
+        h1 {
+            text-align: left;
+            font-size: 6vmin;
+            font-variant: small-caps;
+        }
+    }
+
+    #navmenu {
+        margin-top: 5vmin;
+    }
+
+    #languageselector {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+
+        img {
+            height: 2vmin;
+        }
+    }
+
+    #contactlinks {
+        position: absolute;
+        bottom: 4vmin;
+        left: 0;
+        text-align: center;
         display: flex;
-        width: 45%;
-        justify-content: space-between;
-        align-items: center;
+        width: 100%;
+        justify-content: center;
+        font-size: 4vmin;
+
+        li {
+            margin: 0 2vmin;
+        }
     }
 }
