@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Head from 'next/head';
 import { LanguageContext } from '../utils/LanguageContext';
+import Config from '../config/config.json';
 import LangAPI from '../utils/LangAPI';
 import '../css/resume.scss';
 
@@ -14,6 +16,9 @@ class ResumeView extends Component {
 
         return (
             <div className={"post post-ownstyle post-" + post.type} >
+                <Head>
+                    <title>{Config.title} - {post.title}</title>
+                </Head>
                 <h1>Alain DRILLON</h1>
                 <LanguageContext.Consumer>
                     {value =>
