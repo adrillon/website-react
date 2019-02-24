@@ -1,0 +1,11 @@
+.post:not(.post-ownstyle) {
+    &.post-projects {
+        .project-homepage {
+            font-size: 90%;
+        }
+    }
+
+    p {
+        margin-top: 3vmin;
+    }
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { LanguageContext } from '../utils/LanguageContext';
 import LangAPI from '../utils/LangAPI';
 import ResumeView from './ResumeView';
+import '../css/post.scss';
 
 class PostView extends Component {
     render() {
@@ -16,7 +17,7 @@ class PostView extends Component {
                     {post.homepage ?
                             <LanguageContext.Consumer>
                                 {value => 
-                                    <a href={post.homepage} target="_blank" >{LangAPI.getInstance().getString(value.lang, "projects", "homepage")} {post.homepage}</a>
+                                    <a className="project-homepage" href={post.homepage} target="_blank" >{LangAPI.getInstance().getString(value.lang, "projects", "homepage")} {post.homepage}</a>
                                 }
                             </LanguageContext.Consumer>
                      : ''}

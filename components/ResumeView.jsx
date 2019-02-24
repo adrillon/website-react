@@ -13,7 +13,7 @@ class ResumeView extends Component {
         age = Math.floor(age / (1000 * 3600 * 24 * 365));
 
         return (
-            <div className={"post post-" + post.type} >
+            <div className={"post post-ownstyle post-" + post.type} >
                 <h1>Alain DRILLON</h1>
                 <LanguageContext.Consumer>
                     {value =>
