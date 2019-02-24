@@ -4,6 +4,16 @@
         "lang": "http://localhost/wp-json/custom/v1/langs"
     },
     "lang": "fr",
+    "indexPosts": {
+        "fr": {
+            "posttype": "cv",
+            "slug": "developpeur-web"
+        },
+        "en": {
+            "posttype": "resume",
+            "slug": "web-developer"
+        }
+    },
     "defaultPosts": {
         "resumes": {
             "fr": "developpeur-web",

@@ -8,12 +8,24 @@ import Config from '../config/config.json';
 
 class Post extends Component {
     static async getInitialProps({query, pathname}) {
+        let usesDefaultType = query.posttype === undefined;
         let usesDefaultPost = query.slug === undefined;
-        let slug = query.slug ? query.slug : Config.defaultPosts[LangAPI.getInstance().getPostTypeByLang(query.posttype, query.lang)][query.lang];
-        let post = await SiteAPI.getInstance(query.lang).getPostByTypeAndSlug(query.posttype, slug);
+        let chosenLang = query.lang || SiteAPI.getInstance().getLang();
+        let posttype = query.posttype ? query.posttype : Config.indexPosts[chosenLang].posttype;
+
+        let slug = null;
+        if (usesDefaultType) {
+            slug = Config.indexPosts[chosenLang].slug;
+        } else if (query.slug) {
+            slug = query.slug;
+        } else {
+            slug = Config.defaultPosts[LangAPI.getInstance().getPostTypeByLang(posttype, chosenLang)][chosenLang];
+        }
+
+        let post = await SiteAPI.getInstance(chosenLang).getPostByTypeAndSlug(posttype, slug);
 
         return {
-            lang: query.lang,
+            lang: chosenLang,
             currentRoute: pathname,
             post: post,
             alternateLanguages: Object.keys(post.translations).map((lang) => {
