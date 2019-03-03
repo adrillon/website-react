@@ -19,6 +19,11 @@
         margin-top: 1em;
     }
 
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
     code {
         margin-left: 0.5em;
         margin-right: 0.5em;
