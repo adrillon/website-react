@@ -53,7 +53,7 @@ class Post extends Component {
         return (
             <Layout {...this.props} >
                 <Head>
-                    <title>{he.decode(post.title)}</title>
+                    <title>{he.decode(post.title)} - {Config.title}</title>
                     <meta name="date" scheme="YYYY-MM-DD" content={post.date.substring(0,10)} />
                 </Head>
                 <PostView post={post} />

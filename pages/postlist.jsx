@@ -3,6 +3,7 @@ import Head from 'next/head';
 import SiteAPI from '../utils/SiteAPI';
 import LangAPI from '../utils/LangAPI';
 import Layout from '../layouts/Main.jsx';
+import Config from '../config/config.json';
 import PostListItem from '../components/PostListItem';
 
 class PostList extends Component {
@@ -27,7 +28,7 @@ class PostList extends Component {
         return (
             <Layout {...this.props} >
                 <Head>
-                    <title>{this.props.pageTitle}</title>
+                    <title>{this.props.pageTitle} - {Config.title}</title>
                 </Head>
                 <div>
                     {this.props.posts.map((post) => (
