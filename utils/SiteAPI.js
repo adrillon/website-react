@@ -42,10 +42,12 @@ class SiteAPI {
         let postType = LangAPI.getInstance().getPostTypeByLang(posttype, lang);
         let posts = [];
         switch (postType) {
-            default:
             case 'projects':
                 posts = await this.getProjects();
                 break;
+            default:
+                let wpData = await this.wpapi[postType]().get();
+                posts = this._sanitizeWpPostList(wpData);
         }
 
         return posts;
@@ -60,12 +62,8 @@ class SiteAPI {
         let postType = LangAPI.getInstance().getPostTypeByLang(posttype, lang);
         let post = {};
         switch (postType) {
-            case 'resumes':
-                post = await this.wpapi.resumes().slug(slug);
-                break;
             default:
-            case 'projects':
-                post = await this.wpapi.projects().slug(slug);
+                post = await this.wpapi[postType]().slug(slug);
                 break;
         }
         post = post[0];

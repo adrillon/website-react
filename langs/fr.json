@@ -1,15 +1,22 @@
 {
     "posttypes": {
         "projects": "projets",
-        "resumes": "cv"
+        "resumes": "cv",
+        "posts" : "articles",
+        "post" : "articles"
     },
     "strings": {
         "mainmenu": {
             "projects": "Projets",
-            "resume": "CV"
+            "resume": "CV",
+            "posts" : "Articles"
         },
         "titles": {
-            "projects": "Projets"
+            "projets": "Projets",
+            "articles": "Articles"
+        },
+        "posts": {
+            "postedon": "Publié le"
         },
         "projects": {
             "homepage": "Site Web du projet :"

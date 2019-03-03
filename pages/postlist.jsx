@@ -18,7 +18,7 @@ class PostList extends Component {
                     lang: lang,
                 }
             })),
-            pageTitle: LangAPI.getInstance().getString(query.lang, "titles", "projects")
+            pageTitle: LangAPI.getInstance().getString(query.lang, "titles", query.posttype)
         };
     }
 

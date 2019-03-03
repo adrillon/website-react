@@ -22,7 +22,7 @@ module.exports = withSass({
                 }
             };
 
-            for (let wpType of Object.keys(langConfig.posttypes)) {
+            for (let wpType of config.slugs) {
                 // language-specific default posts
                 let translatedType = langConfig.posttypes[wpType];
                 paths['/' + lang + '/' + translatedType] = {

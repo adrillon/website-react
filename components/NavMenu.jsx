@@ -20,6 +20,11 @@ class NavMenu extends Component {
                                     <a>{LangAPI.getInstance().getString(value.lang, 'mainmenu', 'projects')}</a>
                                 </Link>
                             </li>
+                            <li>
+                                <Link route="postlist" params={{lang: value.lang, posttype: LangAPI.getInstance().getTranslatedPostType('posts', value.lang)}} >
+                                    <a>{LangAPI.getInstance().getString(value.lang, 'mainmenu', 'posts')}</a>
+                                </Link>
+                            </li>
                         </ul>
                 }
             </LanguageContext.Consumer>

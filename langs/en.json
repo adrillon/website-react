@@ -1,15 +1,22 @@
 {
     "posttypes": {
         "projects": "projects",
-        "resumes": "resume"
+        "resumes": "resume",
+        "posts" : "articles",
+        "post" : "articles"
     },
     "strings": {
         "mainmenu": {
             "projects": "Projects",
-            "resume": "Resume"
+            "resume": "Resume",
+            "posts" : "Articles"
         },
         "titles": {
-            "projects": "Projects"
+            "projects": "Projects",
+            "articles": "Articles"
+        },
+        "posts": {
+            "postedon": "Posted on"
         },
         "projects": {
             "homepage": "Project homepage:"

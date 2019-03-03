@@ -3,6 +3,7 @@
     "endpoints": {
         "lang": "http://localhost/wp-json/custom/v1/langs"
     },
+    "slugs": ["resumes","projects","posts"],
     "lang": "fr",
     "indexPosts": {
         "fr": {
