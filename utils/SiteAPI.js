@@ -84,6 +84,7 @@ class SiteAPI {
         let sanitized = {
             id: wpData.id,
             title: wpData.title.rendered,
+            date: wpData.date,
             type: wpData.type,
             slug: wpData.slug,
             content: wpData.content ? wpData.content.rendered : null,

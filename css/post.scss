@@ -1,11 +1,36 @@
 .post:not(.post-ownstyle) {
+    .post-date {
+        display: block;
+        font-size: 75%;
+        margin-bottom: 2em;
+    }
+
     &.post-projects {
         .project-homepage {
             font-size: 90%;
         }
     }
 
-    p {
-        margin-top: 3vmin;
+    h2:not(:first-child) {
+        margin-top: 1em;
+    }
+
+    p, pre, img, ul {
+        margin-top: 1em;
+    }
+
+    code {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+
+        &.aligncenter {
+            display: block;
+            margin: auto;
+        }
     }
 }

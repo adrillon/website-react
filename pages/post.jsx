@@ -5,6 +5,7 @@ import LangAPI from '../utils/LangAPI';
 import Layout from '../layouts/Main';
 import PostView from '../components/PostView';
 import Config from '../config/config.json';
+import he from 'he';
 
 class Post extends Component {
     static async getInitialProps({query, pathname}) {
@@ -52,7 +53,8 @@ class Post extends Component {
         return (
             <Layout {...this.props} >
                 <Head>
-                    <title>{post.title}</title>
+                    <title>{he.decode(post.title)}</title>
+                    <meta name="date" scheme="YYYY-MM-DD" content={post.date.substring(0,10)} />
                 </Head>
                 <PostView post={post} />
             </Layout>
